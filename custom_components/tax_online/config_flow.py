@@ -29,7 +29,7 @@ _LOGGER = logging.getLogger(__name__)
 DATA_SCHEMA = Schema({
     Required("name"): str,
     Required("json_config"): str,
-    Required("output_folder"): In([("output_folder_chuaky", "CHUAKY"), ("output_folder_trinhky", "TRINHKY")])
+    Required("output_folder"): In(["Chuyển đến CHUAKY sau khi chuyển XML", "Chuyển đến CHUAKY sau khi chuyển XML"])
     # Required("api_ip_address"): str
 
 })
@@ -88,8 +88,13 @@ async def validate_input(hass: HomeAssistant, data: dict) -> dict[str, Any]:
     if len(input_config["pin"]) < 6 or len(input_config["pin"]) > 9:
         raise InvalidPin
 
-    if data["output_folder"] != "CHUAKY" and data["output_folder"] != "TRINHKY":
+    if "CHUAKY" not in data["output_folder"] and "TRINHKY" not in data["output_folder"]:
         raise InvalidOutputFolder
+
+    if "CHUAKY" in data["output_folder"]:
+        data["output_folder"] = "CHUAKY"
+    else:
+        data["output_folder"] = "TRINHKY"
 
     try:
         access_token = input_config["access_token"]
