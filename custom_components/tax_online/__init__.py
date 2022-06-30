@@ -41,9 +41,14 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         for tax_id in input_config["tax_ids"]:
             if tax_id.replace("-", "").isnumeric() and len(tax_id.replace("-", "")) >= 10 and len(tax_id.replace("-", "")) <= 16:
                 tax_ids.append(tax_id.replace("-", ""))
-    
-    token = Token(hass, entry.data["name"], api_ip_address, pdf_options, json.dumps(tax_ids), input_config["token_serial"], input_config["serial_number"], input_config["access_token"], input_config["pin"], input_config["app"])
-    await token.check_serial_exists()
+
+    if "CHUAKY" in entry.data["output_folder"]:
+        entry.data["output_folder"] = "CHUAKY"
+    else:
+        entry.data["output_folder"] = "TRINHKY"
+
+    token = Token(hass, entry.data["name"], api_ip_address, pdf_options, json.dumps(tax_ids), input_config["token_serial"], input_config["serial_number"], input_config["access_token"], input_config["pin"], input_config["app"], entry.data["output_folder"])
+    # await token.check_serial_exists()
     hass.data.setdefault(DOMAIN, {})[entry.entry_id] = token
     _LOGGER.info("Token ok")
 
