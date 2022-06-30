@@ -40,7 +40,7 @@ class Token:
         self._is_valid_token = False
         self._output_folder = output_folder
         cron_id = f"{self._id}_"+serial_number
-        cron_name = "Converter: Excel => XML" +  self._tax_ids + ". Folder: " + output_folder
+        cron_name = "Converter: Excel => XML. " + self._name
         self.crons = [
             Crons(cron_id, cron_name, self),
         ]

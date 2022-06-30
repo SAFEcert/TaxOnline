@@ -27,7 +27,8 @@
                     "pdf_options": "JSON PDF options",
                     "serial_number": "Serial Number",
                     "pin": "Pin code",
-                    "app": "App (XHDO;THUE;BHXH;HSKHAC)"
+                    "app": "App (XHDO;THUE;BHXH;HSKHAC)",
+                    "output_folder": "Thư mục chuyển đến sau khi chuyển XML"
                 }
             }
         }
