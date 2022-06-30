@@ -1,11 +1,6 @@
-# More "Level 2" Comprehensive async Push Integration Example
+# TaxOnline
 
-This example aims to show the best practice for a more complete integration using **push** with async.
+- **Custom components:** these are components that Home Assistant can load by being referenced from `const.py` just like built-in components.
+- **Panels:** these are custom button states "on" & "off" that can be included in the frontend using Sensor and Light.
 
-It is based on a _cover_, emulating battery operated cron blinds.
-
-The example includes extensive comments (that should be removed if making a true integration), to guide you through what each field and property is for. It includes 2 sensors tied to the primary cover device.
-
-It's all implemented using a _push_ model in _async_.
-
-This example does not cover translations.
+[panel-custom]: https://github.com/SAFEcert/Tax-Online
