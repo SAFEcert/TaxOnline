@@ -29,7 +29,7 @@ _LOGGER = logging.getLogger(__name__)
 DATA_SCHEMA = Schema({
     Required("name"): str,
     Required("json_config"): str,
-    Required("output_folder"): In(["Chuyển đến CHUAKY sau khi chuyển XML", "Chuyển đến CHUAKY sau khi chuyển XML"])
+    Required("output_folder"): In(("Chuyển đến CHUAKY sau khi chuyển XML", "Chuyển đến TRINHKY sau khi chuyển XML"))
     # Required("api_ip_address"): str
 
 })
