@@ -1,6 +1,6 @@
 {
   "domain": "tax_online",
-  "name": "Tax Online",
+  "name": "TaxOnline",
   "config_flow": true,
   "documentation": "https://www.home-assistant.io/integrations/detailed_hello_world_push",
   "requirements": [],

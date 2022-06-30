@@ -40,7 +40,7 @@ class Token:
         self._is_valid_token = False
         self._output_folder = output_folder
         cron_id = f"{self._id}_"+serial_number
-        cron_name = "Token ****" + serial_number[-7:] + " App:" + app.replace(';', ',')
+        cron_name = "Converter: Excel => XML" +  self._tax_ids + ". Folder: " + output_folder
         self.crons = [
             Crons(cron_id, cron_name, self),
         ]
@@ -115,7 +115,7 @@ class Crons:
 
         # Some static information about this device
         self.firmware_version = "0.0.1"
-        self.model = "SafetySigning token cron"
+        self.model = "TaxOnline token cron"
 
     @property
     def get_name(self) -> str:
