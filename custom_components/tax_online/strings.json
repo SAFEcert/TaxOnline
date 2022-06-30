@@ -10,7 +10,9 @@
           "pdf_options": "JSON PDF options",
           "pin": "Pin code",
           "app": "App (XHDO;THUE;BHXH;HSKHAC)",
-          "output_folder": "Thư mục chuyển đến sau khi chuyển XML"
+          "output_folder": "Thư mục chuyển đến sau khi chuyển XML",
+          "output_folder_trinhky": "Chuyển đến TRINHKY sau khi chuyển XML",
+          "output_folder_chuaky": "Chuyển đến CHUAKY sau khi chuyển XML"
         }
       }
     },
