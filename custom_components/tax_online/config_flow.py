@@ -92,9 +92,9 @@ async def validate_input(hass: HomeAssistant, data: dict) -> dict[str, Any]:
         raise InvalidOutputFolder
 
     if "CHUAKY" in data["output_folder"]:
-        data["output_folder"] = "CHUAKY"
+        output_folder = "CHUAKY"
     else:
-        data["output_folder"] = "TRINHKY"
+        output_folder = "TRINHKY"
 
     try:
         access_token = input_config["access_token"]
@@ -119,7 +119,7 @@ async def validate_input(hass: HomeAssistant, data: dict) -> dict[str, Any]:
         raise InvalidTaxList
 
 
-    token = Token(hass, data["name"], data["api_ip_address"], pdf_options, json.dumps(tax_ids), input_config["token_serial"], input_config["serial_number"], json.dumps(input_config["access_token"]), input_config["pin"], input_config["app"], data["output_folder"])
+    token = Token(hass, data["name"], data["api_ip_address"], pdf_options, json.dumps(tax_ids), input_config["token_serial"], input_config["serial_number"], json.dumps(input_config["access_token"]), input_config["pin"], input_config["app"], output_folder)
     
     # is_valid = await token.check_serial_exists()
     # if is_valid:
