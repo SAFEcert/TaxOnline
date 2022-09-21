@@ -6,3 +6,5 @@
 - **Panels:** these are custom button states "on" & "off" that can be included in the frontend using Sensor and Light.
 
 [panel-custom]: https://github.com/SAFEcert/TaxOnline
+
+`
